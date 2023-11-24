@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login CDL</title>
+        <link rel="shortcut icon" href="./icon/moon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style_login.css') }}">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="{{ url_for('static', filename='script/script_login.js') }}"></script>
+    </head>
+<body>
+    <div id="main-login">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/image2.jpg') }}" alt="Logo da empresa">
+          </div>
+        <div class="left-login">
+            <h1>Biblioteca CDL</h1>
+            <a>
+                <img src="{{ url_for('static', filename='img/image1.jpg') }}" alt="Library" class="jpg">
+            </a>
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <div class="login-name">
+                    <h1>LOGIN</h1>
+                    
+                </div>
+                <form method="POST" action="/">
+                    <div class="textfield">
+                        <input id="usuario" class="input" required type="text" name="usuario">
+                        <label class="label" for="usuario">Usuário</label>
+                    </div>
+                    <div class="textfield">
+                        <input id="senha" class="input" required type="password" name="senha">
+                        <label class="label" for="senha">Senha</label>
+                    </div>
+                    <button class="button-login" type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

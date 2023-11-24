@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style_index.css') }}">
+    <script src="{{ url_for('static', filename='script/script_index.js') }}"></script>
+    <title>Controle de frequência quantitativa e qualitativa</title>
+</head>
+
+<body>
+
+    <div id="date-container"></div>
+
+    <h1>CONTROLE DE FREQUÊNCIA QUANTITATIVA E QUALITATIVA</h1>
+
+    <table id="attendance-table">
+        <thead>
+            <tr>
+                <th>Número de Ordem</th>
+                <th>Tipo de Visitante</th>
+                <th>A - Pesquisa no Acervo</th>
+                <th>B - Estudo em Grupo</th>
+                <th>C - Estudo/Leitura Individual</th>
+                <th>D - Acesso aos Micros</th>
+                <th>E - Visita</th>
+                <th>F - Normalização</th>
+                <th>G - Pesquisa na Internet</th>
+                <th>H - Orientação de Pesquisa</th>
+                <th>I - Levantamento Bibliográfico</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>1</td>
+                <td class="radio-container">
+                    <select name="atividade0_A">
+                        <option value="0">Selecione</option>
+                        <option value="A">Aluno Extensão</option>
+                        <option value="B">Aluno Graduação</option>
+                        <option value="C">Aluno Pós-Graduação</option>
+                        <option value="D">Corpo Docente</option>
+                        <option value="E">Diretor</option>
+                        <option value="F">Funcionário</option>
+                        <option value="G">Gestor</option>
+                        <option value="H">Institucional</option>
+                        <option value="I">Visitante</option>
+                    </select>
+                </td>
+                <td class="radio-container"><label><input type="checkbox" name="atividade_A" value="A"></label></td>
+                <td class="radio-container"><label><input type="checkbox" name="atividade_B" value="B"></label></td>
+                <td class="radio-container"><label><input type="checkbox" name="atividade_C" value="C"></label></td>
+                <td class="radio-container"><label><input type="checkbox" name="atividade_D" value="D"></label></td>
+                <td class="radio-container"><label><input type="checkbox" name="atividade_E" value="E"></label></td>
+                <td class="radio-container"><label><input type="checkbox" name="atividade_F" value="F"></label></td>
+                <td class="radio-container"><label><input type="checkbox" name="atividade_G" value="G"></label></td>
+                <td class="radio-container"><label><input type="checkbox" name="atividade_H" value="H"></label></td>
+                <td class="radio-container"><label><input type="checkbox" name="atividade_I" value="I"></label></td>
+                <td><button onclick="salvarLinha(1)">Salvar</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <button onclick="adicionarLinha()">Adicionar Linha</button>
+
+    <h2>Visitas salvas</h2>
+    <table id="stored-clients-table">
+        <thead>
+            <tr>
+                <th>Número de Ordem</th>
+                <th>Data</th>
+                <th>Tipo de Visitante</th>
+                <th>Atividades</th>
+                <th>Turno</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!-- A tabela será preenchida dinamicamente pelo JavaScript -->
+        </tbody>
+    </table>
+    <h2>RELATÓRIOS</h2>
+    <div class="report-container">
+        <label for="start-date">Data Inicial:</label>
+        <input type="date" id="start-date" name="start-date">
+
+        <label for="end-date">Data Final:</label>
+        <input type="date" id="end-date" name="end-date">
+
+        <button onclick="gerarRelatorio()">Gerar Relatório</button>
+        <button onclick="sair()">Sair</button>
+    </div>
+
+    <div class="logo-bottom">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+    </div>
+
+</body>
+
+</html>

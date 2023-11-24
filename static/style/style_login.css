@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --color-dark-800: FFFAFA;
+    --color-background: FFFAFA;
+
+    --color-shadow-900: #00000056;
+
+    --color-background-input: #4554F5;
+    --color-text: #7C6A6A;
+    --color-text-placeholder: #7C6A6A;
+
+
+    --left-login-font: #77ffc0;
+    --color-blue-200: #4554F5;
+
+    --color-shadow-green: #00ff8052;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+    box-sizing: border-box;
+}
+
+#main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-background);
+}
+
+.left-login, .right-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+.left-login > h1 {
+    font-size: 3vw;
+    color: #4554F5;
+    position: revert;
+}
+
+.jpg {
+    width: 50vw;
+
+}
+
+.logo {
+    width: 8vw;
+    flex-direction: column;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 1;
+
+}
+
+.card-login {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 35px;
+    border-radius: 20px;
+}
+
+.login-name {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.login-name > h1 {
+    color: #4554F5;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 13px 0;
+    font-size: 1.10rem;
+    position: relative;
+}
+
+.input {
+    all: unset;
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--color-blue-200);
+    border-radius: 10px;
+    transition: 150ms
+     cubic-bezier(0.4, 0, 0.2,1);
+}
+
+.label{
+    position: absolute;
+    top: 1rem;
+    padding-left: 10px;
+    color: #111;
+    pointer-events: none;
+    font-size: 16px ;
+    transition: 150ms
+    cubic-bezier(0.4, 0, 0.2,1);
+}
+
+.input:focus{
+    border: 1px solid #2196f3;
+}
+
+.input:is(:focus, :valid) ~ label {
+    transform: translateY(-120%)
+    scale(0.7);
+    background-color: #FFFF;
+    padding-inline: 0.3rem;
+    color: #2196f3;
+}
+
+.button-login {
+    width: 75%;
+    border: none;
+    border-radius: 8px;
+    margin: 25px;
+    padding: 16px 0;
+    outline: none;
+    text-transform: uppercase;
+    font-weight:800;
+    letter-spacing: 2px;
+    color: #2b134b;
+    background-color: var(--color-blue-200);
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.button-login:hover{
+   background-color: #522183;
+   transition: all 0.4s;
+   color: #FFFF;
+}
+
+
+.light#main-login {
+    background-color: #FFFFFF;
+}
+
+.light#main-login .card-login {
+    background-color: #dadada;
+    box-shadow: 20px 10px 40px #6226c5a6;
+}
+
+.light#main-login .button-login{
+    color: #eeeeeeee;
+    background-color: #8310F5;
+}
+
+.light#main-login .left-login > h1 {
+    color: #973df1;
+}
+
+.light#main-login .login-name > h1 {
+    color: #8310F5;
+}
+
+.light#main-login .textfield > input {
+    background-color: #a8a5b1;
+    box-shadow: 20px 10px 40px #6226c5a6;
+}
+
+.light#main-login .textfield > label {
+    color: #262626;
+}
+
+.light#main-login .textfield > input::placeholder {
+    color: #545454cf;
+}
+
+@media (max-width:950px) {
+    .card-login {
+        width: 90%;
+    }
+
+    #button {
+        right: 40px;
+    }
+}
+
+@media (max-width:600px) {
+    #main-login {
+        flex-direction: column
+    }
+
+    .left-login > h1 {
+        display: none;
+    } 
+
+    .left-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .svg {
+        width: 50vw;
+    }
+
+    .right-login {
+        width: 100vw;
+        height: 70vh;
+    }
+
+    .card-login {
+        width: 90%;
+    }
+
+    #button {
+        right: 50px;
+    }
+}
+
+.title {
+    text-align: center;
+}
